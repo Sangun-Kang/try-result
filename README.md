@@ -45,9 +45,9 @@ try {
 With `try-ok`, you handle errors explicitly as return values:
 
 ```ts
-import { tryResult } from "@sangun-kang/try-ok";
+import { tryOk } from "@sangun-kang/try-ok";
 
-const result = await tryResult(fetch("/api/user").then(r => r.json()));
+const result = await tryOk(fetch("/api/user").then(r => r.json()));
 
 // 1. Handle Error First (Type Guard)
 if (result.isError) {
@@ -63,10 +63,10 @@ console.log(result.data);
 `try-ok` works well inside React components, especially when calling an existing async function:
 
 ```tsx
-import { tryResult } from "@sangun-kang/try-ok";
+import { tryOk } from "@sangun-kang/try-ok";
 
 export default async function Page() {
-  const result = await tryResult(getData());
+  const result = await tryOk(getData());
 
   if (result.isError) {
     return <div>Oops!</div>;
@@ -95,7 +95,7 @@ You can strictly type your errors if needed:
 ```ts
 type ApiError = { status: number; message: string };
 
-const result = await tryResult<User, ApiError>(getUser());
+const result = await tryOk<User, ApiError>(getUser());
 
 if (result.isError) {
   // TypeScript knows this is ApiError

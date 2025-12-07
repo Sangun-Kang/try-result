@@ -108,7 +108,7 @@ if (result.isError) {
 I actually found a lot of similar OSS!
 Seems like developers everywhere have had the same idea haha.
 
-Still, try-result has a slightly different goal:
+Still, try-ok has a slightly different goal:
 it focuses on stronger type safety and explicit error handling using a clean Result pattern.
 
 If you prefer predictable control flow and safer TypeScript,

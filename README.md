@@ -20,7 +20,7 @@ That's why I created `try-ok`—to fix these habits with a tiny, zero-dependency
 ## Installation
 
 ```bash
-npm install @sangun-kang/try-ok
+npm install try-ok
 ```
 
 ## How to use
@@ -45,7 +45,7 @@ try {
 With `try-ok`, you handle errors explicitly as return values:
 
 ```ts
-import { tryOk } from "@sangun-kang/try-ok";
+import { tryOk } from "try-ok";
 
 const result = await tryOk(fetch("/api/user").then(r => r.json()));
 
@@ -63,7 +63,7 @@ console.log(result.data);
 `try-ok` works well inside React components, especially when calling an existing async function:
 
 ```tsx
-import { tryOk } from "@sangun-kang/try-ok";
+import { tryOk } from "try-ok";
 
 export default async function Page() {
   const result = await tryOk(getData());
